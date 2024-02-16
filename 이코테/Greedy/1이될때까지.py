@@ -1,5 +1,4 @@
 n, k = map(int, input().split())
-# 17 4
 cnt = 0
 
 # n이 커질수록 비효율적
