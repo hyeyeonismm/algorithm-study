@@ -1,11 +1,9 @@
 def solution(myStr):
-    answer = []
-    myStr = myStr.replace('a' ,'-').replace('b','-').replace('c','-')
-    myStr = myStr.split('-')
-    for i in myStr:
-        if i!='':
-            answer.append(i)
-    if len(answer)==0:
-        answer.append('EMPTY')        
+    myStr = myStr.replace('a' ,' ').replace('b',' ').replace('c',' ')
+    myStr = myStr.split()
+    
+    if len(myStr)==0:
+        myStr.append('EMPTY')
         
-    return answer
+    return myStr
+
