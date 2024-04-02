@@ -4,12 +4,6 @@ def solution(arr):
         answer.append(-1)
         return answer
 
-    for i in range(len(arr)):
-        if arr[i]==2:
-            answer += arr[i:]
-            break
-    j = len(answer)-1
-    while j>=0: 
-        if answer[j]==2: 
-            return answer[:j+1]
-        j-=1
+    return arr[arr.index(2):len(arr)-arr[::-1].index(2)]
+
+    
