@@ -1,9 +1,6 @@
 def solution(dots):
-    for i in range(len(dots)):
-        x = dots[0][0]
-        y = dots[0][1]
-        if x==dots[i][0]:
-            sero = abs(y-dots[i][1])
-        if y==dots[i][1]:
-            garo = abs(x-dots[i][0])
-    return sero*garo
+    dots.sort()
+    garo = abs(dots[0][0]-dots[2][0])
+    dots.sort(key=lambda x : x[1])
+    sero = abs(dots[0][1]-dots[2][1])
+    return garo * sero
