@@ -1,5 +1,7 @@
-n = int(input())
-m = int(input())
+import sys
+
+n = int(sys.stdin.readline())
+m = int(sys.stdin.readline())
 
 graph = [[] for i in range(n + 1)]
 
@@ -15,14 +17,15 @@ count = 0
 tmp = []
 
 
-def dfs(graph, v, visited):
+def dfs(v):
     visited[v] = True
-    tmp.append(v)
+    global count
+    count += 1
     for i in graph[v]:
         if visited[i] == False:
-            dfs(graph, i, visited)
+            dfs(i)
 
 
-dfs(graph, 1, visited)
+dfs(1)
 
-print(len(tmp) - 1)
+print(count-1)
